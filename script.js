@@ -11,6 +11,10 @@ donebtn.addEventListener('click',()=>{
   if(chat.value){
     updateUI();
   }
+  else{
+      document.querySelector(".error").innerHTML="Please, Enter the task";
+      console.log("ENter")
+  }
 });
 
 
@@ -23,27 +27,19 @@ function updateUI(){
   postText.innerHTML=chat.value;
   const deleteBtn=document.createElement('button');
   deleteBtn.className='delete done-style';
-  deleteBtn.innerHTML='DELETE';
+  deleteBtn.innerHTML='done';
   post.append(postText);
   post.append(deleteBtn);
   postArray.push(post);
   content.append(post);
   chat.value="";
   deleteBtn.addEventListener('click',()=>{
-    // post.classList.add('thisone');
-    // removeThis();
+    
     post.remove();
+
   })
 }
-// function removeThis(){
-//   const getPost=document.querySelectorAll('.post');
-//   getPost.forEach(post=>{
-//     if(post.classList.contains('thisone')){
-//       post.remove();
-//     };
-//   });
 
 
-// }
 
 

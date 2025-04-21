@@ -69,14 +69,17 @@ h1{
     font-size: large;
     background-color: white;
     color: rgb(0, 65, 177);
+    cursor: pointer;
 }
 .done-style:active{
     font-size: xx-small;
 }
-.post-delete{
-    animation: deleted 1s ease-in;
+.delete{
+    background-color: rgb(250, 162, 0);
 }
-
+.delete:hover{
+    color: rgb(250, 162, 0);
+}
 
 
 
@@ -88,4 +91,26 @@ h1{
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+@media screen and (width<=480px) {
+    .page{
+        grid-template-rows: min-content 1fr min-content;
+        grid-template-areas: 
+        "hero hero hero hero hero hero hero"
+        "content content content content content content content"
+    "input input input input input input input"
+        ;
+        
+    }
+    .content{
+        grid-column: 1/8;
+    }
+    .inputBox{
+        grid-column: 1/8;
+        width: 95%;
+        justify-self: center;
+        position: sticky;
+        bottom: 0;
+    }
 }
